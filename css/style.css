@@ -14,6 +14,7 @@ body {
   width: 100%;
   min-height: 100vh;
   justify-items: center;
+  justify-content: center;
   padding: 16px 8px;
   gap: 16px;
 }
@@ -60,6 +61,7 @@ body {
   transition: 0.3s;
 }
 
+.flex-container,
 .jogue {
   display: flex;
   gap: 24px;
@@ -76,7 +78,71 @@ body {
   transform: rotate(90deg);
 }
 
+.flex-container div {
+  background: #c8a47e;
+  padding: 16px;
+  border-radius: 50%;
+  border: 2px solid #111;
+}
+
+.versus {
+  background: #0baef2 !important;
+}
+
+.resultado {
+  justify-self: center;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.resultado::after,
+.resultado::before {
+  content: "";
+  width: 50px;
+  height: 2px;
+  display: block;
+  background: #111;
+}
+
+.resultado.derrota::after,
+.resultado.derrota::before {
+  content: "";
+  background: #db4a2e;
+}
+.resultado.derrota {
+  color: #db4a2e;
+}
+
+.resultado.vitoria::after,
+.resultado.vitoria::before {
+  content: "";
+  background: #2ea421;
+}
+.resultado.vitoria {
+  color: #2ea421;
+}
+
+.resultado.empate::after,
+.resultado.empate::before {
+  content: "";
+  background: #ffb501;
+}
+.resultado.empate {
+  color: #ffb501;
+}
+
 @media (max-width: 400px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ganhador {
+    grid-row: 3;
+  }
   .ganhador {
     grid-row: 3;
   }
